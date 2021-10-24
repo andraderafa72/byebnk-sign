@@ -53,10 +53,11 @@ export const Table = styled.table`
           width: 2.5rem;
           height: 2.5rem;
         }
-        width: 110px;
+        width: 50px;
+        max-width: 50px;
       }
       &:nth-child(2){
-        width: 50%;
+        width: 60%;
       }
       &:nth-child(3){
         width: 200px;
@@ -66,8 +67,9 @@ export const Table = styled.table`
       }
 
       &:last-child{
-        width: 120px;
-        max-width: 120px;
+        width: 110px;
+        max-width: 110px;
+        text-align: right;
         border-radius: 0 0.675rem .675rem 0;
       }
     }

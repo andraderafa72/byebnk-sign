@@ -18,18 +18,18 @@ export const Container = styled.section`
     justify-content: center;
     cursor: pointer;
     border: none;
-    background: transparent;
+    background: var(--red);
     height: 3rem;
     width: 180px;
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: bold;
     border-radius: .75rem;
-    border: 1px solid var(--blue);
     color: var(--text);
     transition: .2s;
+
     & + button{
-      margin-left: 1.5rem;
+      margin-left: 1rem;
     }
     
     &.sign{
@@ -39,7 +39,7 @@ export const Container = styled.section`
     }
     
     &:hover{
-      background: var(--blue);
+      filter: brightness(.9);
     }
 
     &.sign:hover{

@@ -13,7 +13,7 @@ export function DocsTableButton({ id, isSigned, url }: DocsTableButtonProps) {
 
   return (
     <Container signed={isSigned}>
-      <Link to={`/documento/${isSigned ? 'visualizar' : 'assinar'}/${id}`} >
+      <Link to={`/documento/${isSigned ? 'visualizar' : 'assinar'}/${id}`}>
         {!isSigned ? 'Assinar' : 'Visualizar'}
       </Link>
       <img src={arrow} alt="" onClick={() => setIsDownloadVisible(!isDownloadVisible)} />

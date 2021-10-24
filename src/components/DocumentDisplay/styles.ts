@@ -4,9 +4,13 @@ export const Container = styled.section`
   height: 100%;
   max-width: 1400px;
   margin: 0 auto;
+  overflow: auto;
   .react-pdf__Page{
     max-width: 1300px;
-    height: 100vh;
+    height: 100%;
+    @media(max-width: 768px) {
+      max-width: 400px;
+    }
   }
 
   .pagination{
@@ -39,4 +43,5 @@ export const Container = styled.section`
       }
     }
   }
+
 `;

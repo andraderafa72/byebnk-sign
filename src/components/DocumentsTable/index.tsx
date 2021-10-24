@@ -59,7 +59,6 @@ export function DocumentsTable({ assinados, pendentes }: DocumentsTableProps) {
                 </td>
                 <td>{el.nome}</td>
                 <td>{el.tipo[0].toUpperCase() + el.tipo.slice(1, el.tipo.length).replaceAll('-', ' ')}</td>
-                <td>{(el.assinaturas?.length || 0) + ' assinaturas'} </td>
                 <td>
                   <DocsTableButton id={el.id} isSigned={el.status === 'assinado'} url={el.documento} />
                 </td>

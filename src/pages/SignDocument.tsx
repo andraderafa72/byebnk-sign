@@ -8,7 +8,7 @@ import { Main } from "../styles/document";
 import arrow from '../assets/img/arrow.svg';
 
 export function SignDocument(props: any) {
-  const [url, setUrl] = useState('');
+  const [doc, setDoc] = useState({} as any);
 
   const { token } = useAuth();
 
@@ -21,8 +21,7 @@ export function SignDocument(props: any) {
         },
       });
 
-      const url = data.documento
-      setUrl(url)
+      setDoc(data)
     }
 
     fetchDocument()
@@ -31,10 +30,10 @@ export function SignDocument(props: any) {
   return (
     <Main>
       <Link to="/documentos"><img src={arrow} alt="" /> Voltar</Link>
-      {url ? (
+      {doc.documento ? (
         <>
-          <DocumentDisplay url={url} />
-          <SignCurrentDocument id={props.match.params.id} url={url} />
+          <DocumentDisplay url={doc.documento} />
+          <SignCurrentDocument id={props.match.params.id} name={doc.nome} />
         </>
       ) : (
         <div className="loading"></div>

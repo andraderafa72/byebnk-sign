@@ -11,15 +11,13 @@ export const Container = styled.div<ContainerProps>`
   justify-content: space-between;
   background: ${props => props.signed ? 'var(--blue)' : '#B1C6FA'};
   border-radius: .25rem;
+  max-width: 110px;
+  margin-left: auto;
 
   > a{ 
     color: var(--background);
     font-weight: bold;
     padding: .5rem .5rem;
-
-    &.signed{
-      background:var(--blue);
-    }
   }
 
   img{
@@ -38,12 +36,14 @@ export const Container = styled.div<ContainerProps>`
     top: 99%;
     left: 0;
     z-index: 0;
+    width: 100%;
     
     a{
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       cursor: pointer;      
-      width: 98%;
+      width: 100%;
       border: none;
       font-size: 1rem;
       height: 2rem;
