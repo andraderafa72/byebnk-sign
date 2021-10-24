@@ -10,26 +10,40 @@ import { SignDocument } from './pages/SignDocument';
 
 
 export function App() {
-  const [cookies, ] = useCookies(['byebnk@token']);
+  const [cookies,] = useCookies(['byebnk@token']);
 
-  const PrivateRoute = ({component: Component, ...rest}: any) => {
+  const PrivateRoute = ({ component: Component, ...rest }: any) => {
     return (
-    <Route
-      {...rest}
-      render={props => isAuthenticated(cookies) ? (
-        <Component {...props} />
-      ) : (
-        <Redirect to={{pathname: '/', state: { from: props.location }}}/>
-      )}
-    />
-  )}
+      <Route
+        {...rest}
+        render={props => isAuthenticated(cookies) ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+        )}
+      />
+    )
+  }
+
+  const AuthRoute = ({ component: Component, ...rest }: any) => {
+    return (
+      <Route
+        {...rest}
+        render={props => isAuthenticated(cookies) ? (
+          <Redirect to={{ pathname: '/documentos', state: { from: props.location } }} />
+        ) : (
+          <Component {...props} />
+        )}
+      />
+    );
+  }
 
   return (
     <BrowserRouter>
       <CookiesProvider>
         <AuthContextProvider>
           <Switch>
-            <Route path="/" exact component={Auth} />
+            <AuthRoute path="/" exact component={Auth} />
             <PrivateRoute path="/documentos" exact component={Documentos} />
             <PrivateRoute path="/documento/visualizar/:id" exact component={ViewDocument} />
             <PrivateRoute path="/documento/assinar/:id" exact component={SignDocument} />
