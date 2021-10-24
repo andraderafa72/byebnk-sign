@@ -12,7 +12,7 @@ export const Form = styled.form`
 
   > img{
     max-height: 4rem;
-    margin: 1.25rem 0 3rem;
+    margin: 1.25rem 0 4rem;
   }
   
   button {
