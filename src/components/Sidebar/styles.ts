@@ -17,7 +17,8 @@ export const Container = styled.aside<CointainerProps>`
   border-radius: 0 1rem 1rem 0;
   box-shadow: 0 4px 12px 0 rgba(99,99,99,.08);
   transition: .3s ease-out ;
-  
+  z-index: 9;
+
   > img{
     width: 2.5rem;
     height: 2.5rem;
@@ -50,6 +51,10 @@ export const Container = styled.aside<CointainerProps>`
         width: 100%;
         height: 3.5rem;
         padding: 0 .5rem 0 1.5rem;
+
+        @media(max-width: 768px){
+          padding-left: 1rem;
+        }
 
         &:hover, &.active{
           img{
@@ -113,6 +118,16 @@ export const Container = styled.aside<CointainerProps>`
           }
         }
       }
+    }
+  }
+
+  @media(max-width: 768px){
+    width: ${(props) => props.size === 'small' ? '60px' : '280px'};
+
+    > img{
+      width: 2.15rem;
+      height: 2.15rem;
+      margin: 1rem 1.5rem 0 1rem;
     }
   }
 

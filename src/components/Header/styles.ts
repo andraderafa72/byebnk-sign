@@ -33,4 +33,10 @@ export const Container = styled.header`
       height: 1.5rem;
     }
   }
+
+  @media(max-width: 375px){
+    img{
+      width: 180px;
+    }
+  }
 `;

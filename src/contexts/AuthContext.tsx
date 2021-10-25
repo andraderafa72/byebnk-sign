@@ -61,6 +61,7 @@ export function AuthContextProvider({ children }: { children: ReactNode }) {
       setIsAuthenticated(true);
     } catch (error) {
       setIsAuthenticated(false);
+      throw new Error()
     }
   }
 

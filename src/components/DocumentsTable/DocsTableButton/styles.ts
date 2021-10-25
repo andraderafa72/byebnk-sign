@@ -58,4 +58,10 @@ export const Container = styled.div<ContainerProps>`
       display: block;
     }
   }
+
+  @media(max-width: 768px){
+    margin: 0 auto;
+    .wrapper{
+    }
+  }
 `;

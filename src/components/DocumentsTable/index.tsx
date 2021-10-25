@@ -38,7 +38,7 @@ export function DocumentsTable({ assinados, pendentes }: DocumentsTableProps) {
   return (
     <>
       <FiltersDiv>
-        <span>Filtar por: </span>
+        <span>Filtrar por: </span>
         <select name="filtros" id="flitros" value={filtro} onChange={e => handleChangeFilter(e.target.value)}>
           <option value="none">Todos os documentos</option>
           <option value="assinados">✔️ Assinados</option>

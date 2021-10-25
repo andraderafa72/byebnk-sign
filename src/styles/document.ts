@@ -9,6 +9,7 @@ export const Main = styled.main`
   justify-content: center;
   background: #525659;
   padding-top: 1rem;
+  padding: 1rem 10%;
 
   > a {
     position: absolute;
@@ -24,5 +25,9 @@ export const Main = styled.main`
     img{
       transform: rotate(180deg);
     }
+  }
+
+  @media(max-width:475px){
+    padding-top: 5rem;
   }
 `;

@@ -16,7 +16,6 @@ import styled from 'styled-components';
 export const Table = styled.table`
     width: 100%;
     border-spacing: 0 .5rem;
-    /* border-collapse: collapse; */
     
     thead tr{
       /* border: 1px solid var(--cyan); */
@@ -63,14 +62,41 @@ export const Table = styled.table`
         width: 200px;
       }
       &:nth-child(4){
-        width: 110px;
+        width: 180px;
       }
 
       &:last-child{
-        width: 110px;
-        max-width: 110px;
+        width: 180px;
+        max-width: 180px;
         text-align: right;
         border-radius: 0 0.675rem .675rem 0;
+      }
+    }
+
+    @media(max-width: 768px){
+      tr{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        margin-bottom: 1rem;
+
+        td{
+          display: block;
+          width: 100%!important;
+          max-width: 100%!important;
+          text-align: center;
+          padding: .5rem;
+
+          &:first-child{
+            border-radius: 0.675rem .675rem 0 0;
+          }
+
+          &:last-child{
+            border-radius: 0 0 0.675rem .675rem;
+            padding-bottom: 1rem;
+          }
+        }
       }
     }
 `;
@@ -96,5 +122,17 @@ export const FiltersDiv = styled.div`
     color: var(--text);
     font-size: 1rem;
     border-radius: .25rem;
+  }
+
+  @media(max-width: 768px){
+    gap: .5rem;
+    span{
+      font-size: .9rem;
+    }
+    
+    select{
+      font-size: .9rem;
+      padding:0 .2rem;
+    }
   }
 `;
