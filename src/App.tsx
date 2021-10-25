@@ -27,19 +27,6 @@ export function App() {
     )
   }
 
-  const AuthRoute = ({ component: Component, ...rest }: any) => {
-    return (
-      <Route
-        {...rest}
-        render={props => isAuth(cookies) ? (
-          <Redirect to={{ pathname: '/documentos', state: { from: props.location } }} />
-        ) : (
-          <Component {...props} />
-        )}
-      />
-    );
-  }
-
   return (
     <BrowserRouter>
       <CookiesProvider>
@@ -52,7 +39,6 @@ export function App() {
                 <Auth />
               )
             )} />
-            {/* <AuthRoute path="/" exact component={Auth} />*/}
             <PrivateRoute path="/documentos" exact component={Documentos} />
             <PrivateRoute path="/documento/visualizar/:id" exact component={ViewDocument} />
             <PrivateRoute path="/documento/assinar/:id" exact component={SignDocument} /> 
